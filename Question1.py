@@ -56,38 +56,3 @@ time.sleep(10)
 sign_out = driver.find_element(By.XPATH, "//*[@id='packt-navbar']/div[4]/a[3]")
 driver.execute_script("arguments[0].click();", sign_out)
 time.sleep(10)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-sign_out = driver.find_element(By.XPATH,"//*[@id='packt-navbar-nav']/div/a[3]")
-driver.execute_script("arguments[0].click();", sign_out)
-driver.close()
-
-
-
