@@ -1,8 +1,12 @@
-from selenium.webdriver.support.color import Color
-
-rgb = find_element_by_class_name("bar").value_of_css_property('background-color')
-hex = Color.from_string(rgb).hex
 
 
+#Title of the content
+add = driver.find_element(By.ID, "title").send_keys("python")
+act = ActionChains(driver)
+act.context_click(add).perform()
+print(add)
 
-boolean eleSelected= driver.findElement(By.xpath("xpath")).isDisplayed();
+author = driver.find_element(By.XPATH, "//*[@id='content-author']").send_keys("Aleksander Molak")
+act = ActionChains(driver)
+act.context_click(author).perform()
+print(author)
