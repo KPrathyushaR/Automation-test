@@ -13,6 +13,10 @@ time.sleep(5)
 driver.find_element(By.XPATH, "//*[@id='library-dropdown']").click()
 time.sleep(10)
 
+home = driver.find_element(By.XPATH, "//*[@id='packt-navbar-nav']/div/div[1]/div/a[1]/span")
+home.click()
+
+
 
 # searching the title name in the search bar
 # driver.find_element(By.XPATH, "//*[@id='search-input']/input").send_keys("python")
