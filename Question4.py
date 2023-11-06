@@ -7,39 +7,57 @@ from selenium.webdriver.support.select import Select
 # from selenium.webdriver.chrome.service import Service
 
 driver = webdriver.Chrome()
-driver.get("https://subscription.packtpub.com/register")
+driver.get("https://subscription.packtpub.com/")
+driver.implicity_wait(5)
 driver.maximize_window()
 time.sleep(6)
-
-driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div/div/div[2]/div/div/a").click()
-time.sleep(2)
-driver.find_element(By.XPATH, "//*[@id='login-input-email']").send_keys("koppalaprathyusha11197@gmail.com")
-driver.find_element(By.XPATH, "//*[@id='login-input-password']").send_keys("Prathyu@123")
-sign_in = driver.find_element(By.XPATH, "//*[@id='login-form']/form/button[1]/span")
-driver.execute_script("arguments[0].click();", sign_in)
+#browsing the top navigation page
+driver.find_element(By.XPATH, "//*[@id='packt-navbar-nav']/div/a[1]").click()
 time.sleep(10)
+#resetting the browser page
+driver.find_element(By.XPATH, "//*[@id='root']/div/div[5]/div[1]/div[1]/button").click()
+driver.refresh()
+#clicking the publisher year
+driver.find_element(By.XPATH, "/html/body/div[1]/div/div[5]/div[1]/div[4]/div/img").click()
+#Filtering the 2021 books
+driver.find_element(By.XPATH, "//*[@id='root']/div/div[5]/div[1]/div[4]/div[2]/div[4]/div[1]").click()
 
-driver.find_element(By.XPATH, "//*[@id='root']/div/main/section[3]/div[1]/div/div[2]/a").click()
-time.sleep(10)
-
-Search_bar = driver.find_element(By.XPATH, "//input[@placeholder='Search titles …']")
-Search_bar.send_keys("Machine Learning Engineering with Python - Second Edition")
+#Searching the titles
+Search_bar = driver.find_element(By.XPATH, "//*[@id='search-input']/input").clear()
+Search_bar.send_keys("Python")
 act = ActionChains(driver)
 act.double_click(Search_bar).perform()
 driver.back()
 time.sleep(5)
+print(search_bar)
 
-alllinks = driver.find_elements(By.TAG_NAME,'a')
-count = 0
-for link in alllinks:
-    Url = link.get_attribute('href')
-    try:
-        res= request.head(url)
-    except:
-        none
-    if res.status_code>=400:
-        print(url,"is broken link")
-        count+=1
-    else:
-        print(url, "is valid link")
+driver.refresh()
+search_bar.send_keys("Paint")
+act = ActionChains(driver)
+act.double_click(Search_bar).perform()
+driver.back()
+time.sleep(5)
+print(search_bar)
+
+driver.refresh()
+search_bar.send_keys("secure")
+act = ActionChains(driver)
+act.double_click(Search_bar).perform()
+driver.back()
+time.sleep(5)
+print(search_bar)
+
+driver.refresh()
+search_bar.send_keys("tableau")
+act = ActionChains(driver)
+act.double_click(Search_bar).perform()
+driver.back()
+time.sleep(5)
+print(search_bar)
+
+driver.close()
+
+
+
+
 
