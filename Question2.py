@@ -15,9 +15,26 @@ time.sleep(10)
 
 home = driver.find_element(By.XPATH, "//*[@id='packt-navbar-nav']/div/div[1]/div/a[1]/span")
 home.click()
+time.sleep(10)
+driver.back()
 
+playlist = driver.find_element(By.XPATH, "//*[@id='packt-navbar-nav']/div/div[1]/div/a[2]/span")
+playlist.click()
+time.sleep()
+driver.back()
 
+# Checking the advanced Browser
+driver.find_element(By.XPATH, "//*[@id='packt-navbar-nav']/div/a[2]").click()
 
+driver.find_element(By.XPATH, "//*[@id='title']").send_keys("Python")
+
+#Checkboxes 
+checkboxes = driver.find_element(By.XPATH, "//*[@id='app']/div/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/div/div[2]/div[3]/div[3]/div/div/header/button")
+checkboxes.click() 
+print(len(checkboxes))
+
+for i in range():
+  print("Selected the Checkboxes", checkboxes)
 # searching the title name in the search bar
 # driver.find_element(By.XPATH, "//*[@id='search-input']/input").send_keys("python")
 # driver.find_element(By.XPATH, "//*[@id='search-input']/img").click()
