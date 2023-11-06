@@ -9,20 +9,23 @@ driver.implicitly_wait(10)
 driver.maximize_window()
 time.sleep(5)
 
-driver.find_element(By.XPATH, "//*[@id='packt-navbar']/div[1]/a").click()
+#Selecting the Library and options below 
+driver.find_element(By.XPATH, "//*[@id='library-dropdown']").click()
 time.sleep(10)
-#searching the title name in the search bar
-driver.find_element(By.XPATH, "//*[@id='search-input']/input").send_keys("python")
-driver.find_element(By.XPATH, "//*[@id='search-input']/img").click()
+
+
+# searching the title name in the search bar
+# driver.find_element(By.XPATH, "//*[@id='search-input']/input").send_keys("python")
+# driver.find_element(By.XPATH, "//*[@id='search-input']/img").click()
 
 #scrolling the starting to the end
-driver.execute_script("window.scrollBy(0,456)", " ")
-value = driver.execute_script("return window.pageYOffset")
-print("Number of pixels moved:", value)
-time.sleep(10)
+# driver.execute_script("window.scrollBy(0,456)", " ")
+# value = driver.execute_script("return window.pageYOffset")
+# print("Number of pixels moved:", value)
+# time.sleep(10)
 # Checkboxes for the product type
-count = driver.find_element(By.CLASS_NAME, "list-item false")
-print(len(count))
+# count = driver.find_element(By.CLASS_NAME, "list-item false")
+# print(len(count))
 
 
 
