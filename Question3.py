@@ -20,3 +20,17 @@ time.sleep(10)
 
 # writing the carousel below the main tile are correctly appearing
 driver.find_element(By.XPATH, "//*[@id='root']/div/main/section[2]/div[3]/div[3]/div/div/div/div[1]/div/div").click()
+
+main_title = driver.find_element(By.XPATH, "//*[@id='root']/div/main/section[2]/div[3]/div[3]/div/div/div/div[2]/div/div/div")
+main_title.click()
+print(main_title)
+
+button = driver.find_element(By.XPATH, "//*[@id='root']/div/main/section[2]/div[3]/div[3]/div/button[2]")
+button.click()
+
+if main_ttile == expected_title:
+  print("successfully working the test":)
+else:
+  print("Is not working the tests:")
+
+driver.quit()
